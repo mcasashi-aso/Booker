@@ -67,9 +67,6 @@ extension Set: UserDefaultConvertible where Element: UserDefaultConvertible, Ele
     private struct Error: Swift.Error {}
     
     init?(with object: Any) {
-        guard let set = object as? Set<Any> else { return nil }
-        guard let value = try? set.
-        
         guard let array = object as? [Any] else { return nil }
         guard let value = try? array.map({ (object) -> Element in
             if let element = Element(with: object) {

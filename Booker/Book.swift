@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Book: Hashable, Identifiable, Codable {
+struct Book: Hashable, Identifiable {
     var id = UUID()
     
     let name: String
@@ -22,3 +22,5 @@ extension Book: CustomStringConvertible, CustomDebugStringConvertible, CustomRef
     var debugDescription: String { "\(id)  -\(name)" }
     var customMirror: Mirror { Mirror(reflecting: self) }
 }
+
+extension Book: Codable, UserDefaultConvertible {}

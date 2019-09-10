@@ -43,7 +43,7 @@ struct UserDefault<Value: UserDefaultConvertible> {
                 let value = Value(with: object) {
                 return value
             }else {
-                return self.defaultValue
+                return defaultValue
             }
         }
         set {

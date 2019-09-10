@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct BookingData: Hashable, Identifiable, Comparable, Codable {
+struct BookingData: Hashable, Identifiable, Comparable {
     var id: Date { createDate }
     
     let book: Book
@@ -25,3 +25,5 @@ extension BookingData: CustomStringConvertible, CustomDebugStringConvertible {
     var description: String { "\(book.name)  -\(createDate.description)" }
     var debugDescription: String { "\(id.description)  -\(book.name)" }
 }
+
+extension BookingData: Codable, UserDefaultConvertible {}
