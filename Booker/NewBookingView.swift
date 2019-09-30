@@ -10,16 +10,12 @@ import SwiftUI
 
 struct NewBookingView: View {
     
-    @Binding var booking: BookingData?
-    @State var test: String = ""
+    @State var booking = BookingData(book: Book(name: "", writer: "", imageName: "", url: URL(string: "google.com")!), createDate: Date(), about: "", opinion: "")
     
     var body: some View {
         Form {
             List {
-//                VStack {
-                    TextField("test", text: $test)
-//                    TextField(.test, text: $booking.about)
-//                }
+                TextField(.test, text: $booking.book.name)
             }
         }
     }
@@ -27,6 +23,6 @@ struct NewBookingView: View {
 
 struct NewBookingView_Previews: PreviewProvider {
     static var previews: some View {
-        NewBookingView(booking: .constant(nil))
+        NewBookingView()
     }
 }

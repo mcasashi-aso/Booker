@@ -11,10 +11,10 @@ import SwiftUI
 struct BookingData: Hashable, Identifiable, Comparable {
     var id: Date { createDate }
     
-    let book: Book
-    let createDate: Date
-    let about: String
-    let opinion: String
+    var book: Book
+    var createDate: Date
+    var about: String
+    var opinion: String
     
     static func < (lhs: BookingData, rhs: BookingData) -> Bool {
         lhs.createDate < rhs.createDate

@@ -11,10 +11,10 @@ import SwiftUI
 struct Book: Hashable, Identifiable {
     var id = UUID()
     
-    let name: String
-    let writer: String
-    let imageName: String       // TODO: Imageをそのまま保存するのもありだよなあ
-    let url: URL
+    var name: String
+    var writer: String
+    var imageName: String
+    var url: URL
 }
 
 extension Book: CustomStringConvertible, CustomDebugStringConvertible, CustomReflectable {

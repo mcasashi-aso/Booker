@@ -9,25 +9,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var datas: [BookingData] = [
-        BookingData(book: Book(name: "book", writer: "writer", imageName: "image", url: URL(string: "www.google.com")!), createDate: Date(), about: "about", opinion: "opinion")
-    ]
+    
+    @State var newIsPresented = false
+    
+    @State var datas: [BookingData] = {
+        let aBook = Book(name: "a", writer: "a", imageName: "image", url: URL(string: "www.google.com")!)
+        let aData = BookingData(book: aBook, createDate: Date(), about: "about", opinion: "opinion")
+        
+        return [aData]
+    }()
     
     var body: some View {
         NavigationView {
-            List(datas) { data in
+            List(datas.sorted(by: <)) { data in
                 HStack {
+                    Image(systemName: "book").font(.largeTitle)
                     VStack {
-                        Text(data.book.name)
+                        Text(data.book.name).font(.title)
                         Text(data.about)
                     }
                     Spacer()
                     Text(data.createDate.description)
                 }
             }.navigationBarTitle("Booker")
-                .navigationBarItems(trailing: Button(action: {}) {
-                    Image(systemName: "square.and.pencil")
+                .navigationBarItems(trailing: Button(action: {
+                    self.newIsPresented.toggle()
+                }) {
+                    Image(systemName: "square.and.pencil").font(.body)
                 })
+                .sheet(isPresented: $newIsPresented, onDismiss: nil) {
+                    NewBookingView()
+            }
         }
     }
 }
