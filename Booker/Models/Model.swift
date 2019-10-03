@@ -9,7 +9,11 @@
 import SwiftUI
 import Combine
 
-class Model: ObservableObject {
+protocol ModelProtocol {
+    var bookingDatas: [BookingData] { get set }
+}
+
+class Model: ModelProtocol, ObservableObject {
     
     private let userDefaults = UserDefaults.standard
     
@@ -20,9 +24,5 @@ class Model: ObservableObject {
     @Published var bookingDatas = UserDefaults.standard.get(.bookingDatas) ?? [] {
         didSet { userDefaults.set(bookingDatas, forKey: .bookingDatas) }
     }
-    
-    @Published var toggle = false
-    
-    
     
 }

@@ -7,31 +7,22 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     
     @State var newIsPresented = false
     
-    @State var datas: [BookingData] = {
-        let aBook = Book(name: "a", writer: "a", imageName: "image", url: URL(string: "www.google.com")!)
-        let aData = BookingData(book: aBook, createDate: Date(), about: "about", opinion: "opinion")
-        
-        return [aData]
-    }()
+    @State var model: ModelProtocol
     
     var body: some View {
         NavigationView {
-            List(datas.sorted(by: <)) { data in
-                HStack {
-                    Image(systemName: "book").font(.largeTitle)
-                    VStack {
-                        Text(data.book.name).font(.title)
-                        Text(data.about)
-                    }
-                    Spacer()
-                    Text(data.createDate.description)
+            List(model.bookingDatas.sorted(by: >)) { data in
+                NavigationLink(destination: BookingDetailView(data: data)) {
+                    BookingDataRow(data: data)
                 }
-            }.navigationBarTitle("Booker")
+            }
+                .navigationBarTitle("Booker")
                 .navigationBarItems(trailing: Button(action: {
                     self.newIsPresented.toggle()
                 }) {
@@ -46,6 +37,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(model: TestModel())
     }
 }

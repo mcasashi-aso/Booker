@@ -10,14 +10,16 @@ import SwiftUI
 
 struct NewBookingView: View {
     
-    @State var booking = BookingData(book: Book(name: "", writer: "", imageName: "", url: URL(string: "google.com")!), createDate: Date(), about: "", opinion: "")
+    @State var data = BookingData(book: Book(name: "", writer: ""), about: "", opinion: "")
     
     var body: some View {
-        Form {
+        NavigationView {
             List {
-                TextField(.test, text: $booking.book.name)
+                TextField(.test, text: $data.book.name)
+                
+                
             }
-        }
+        }.navigationBarTitle("New Booking")
     }
 }
 
