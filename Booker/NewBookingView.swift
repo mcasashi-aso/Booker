@@ -15,8 +15,11 @@ struct NewBookingView: View {
     var body: some View {
         NavigationView {
             List {
-                TextField(.test, text: $data.book.name)
-                
+                TextField(.test, text: $data.book.name, onEditingChanged: { edited in
+                    
+                }, onCommit: {
+                    
+                })
                 
             }
         }.navigationBarTitle("New Booking")

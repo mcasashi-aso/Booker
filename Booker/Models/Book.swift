@@ -6,7 +6,7 @@
 //  Copyright © 2019 Masashi Aso. All rights reserved.
 //
 
-import SwiftUI
+import Foundation
 
 struct Book: Hashable, Identifiable {
     var id = UUID()

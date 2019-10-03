@@ -20,9 +20,11 @@ struct BookingDetailView: View {
                 }   .padding()
                     .frame(width: UIScreen.main.bounds.width,
                            height: UIScreen.main.bounds.width / 16 * 9)
-                
-                Text(data.about)
-                .padding()
+                if data.book.about != nil {
+                    Text(data.book.about!).padding()
+                }
+                Divider()
+                Text(data.about).padding()
                 
             }
         }.navigationBarTitle(data.book.name)

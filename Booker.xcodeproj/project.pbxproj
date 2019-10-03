@@ -14,6 +14,7 @@
 		BA06B54E2325E0740056803B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B54D2325E0740056803B /* Model.swift */; };
 		BA3C619323280A00004C5CE5 /* NewBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619223280A00004C5CE5 /* NewBookingView.swift */; };
 		BA3C619523280D15004C5CE5 /* LocalizedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */; };
+		BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8334D62345E02A00AEA1EB /* SearchModel.swift */; };
 		BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */; };
 		BAA028702342ED580087AA52 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286F2342ED580087AA52 /* TestModel.swift */; };
 		BABCEDBC2325B6A700B4BBAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBB2325B6A700B4BBAB /* AppDelegate.swift */; };
@@ -56,6 +57,8 @@
 		BA06B54D2325E0740056803B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA3C619223280A00004C5CE5 /* NewBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingView.swift; sourceTree = "<group>"; };
 		BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKeys.swift; sourceTree = "<group>"; };
+		BA8334D52345DFC600AEA1EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BA8334D62345E02A00AEA1EB /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataRow.swift; sourceTree = "<group>"; };
 		BAA0286F2342ED580087AA52 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		BABCEDB82325B6A700B4BBAB /* Booker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +148,7 @@
 				BABCEDBF2325B6A700B4BBAB /* ContentView.swift */,
 				BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */,
 				BA3C619223280A00004C5CE5 /* NewBookingView.swift */,
+				BA8334D62345E02A00AEA1EB /* SearchModel.swift */,
 				BAC9FA9D2344A0A1001D8FC7 /* BookingDetailView.swift */,
 				BAC9FAA52345DE7F001D8FC7 /* CustomViews */,
 				BABCEDC12325B6AC00B4BBAB /* Assets.xcassets */,
@@ -296,6 +300,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = BABCEDAF2325B6A700B4BBAB;
 			productRefGroup = BABCEDB92325B6A700B4BBAB /* Products */;
@@ -344,6 +349,7 @@
 				BA3C619323280A00004C5CE5 /* NewBookingView.swift in Sources */,
 				BABCEDBC2325B6A700B4BBAB /* AppDelegate.swift in Sources */,
 				BABCEDEE2325B82D00B4BBAB /* BookingData.swift in Sources */,
+				BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */,
 				BAA028702342ED580087AA52 /* TestModel.swift in Sources */,
 				BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */,
 				BABCEDEC2325B7C000B4BBAB /* Book.swift in Sources */,
@@ -397,6 +403,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BABCEDC72325B6AC00B4BBAB /* Base */,
+				BA8334D52345DFC600AEA1EB /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -408,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -468,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
