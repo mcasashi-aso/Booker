@@ -11,6 +11,8 @@ import Combine
 
 struct ContentView: View {
     
+    @ObservedObject var searchModel = SearchModel()
+    
     @State var newIsPresented = false
     
     @State var model: ModelProtocol
@@ -31,6 +33,11 @@ struct ContentView: View {
                 .sheet(isPresented: $newIsPresented, onDismiss: nil) {
                     NewBookingView()
             }
+            .navigationBarItems(leading: Button(action: {
+                self.searchModel.search()
+            }) {
+                Text("search")
+            })
         }
     }
 }

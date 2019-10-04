@@ -9,9 +9,15 @@
 import Foundation
 import Combine
 
+protocol SearchModelProtocol {
+    var books: [Book] { get set }
+    var searchText: String { get set }
+    
+}
+
 class SearchModel: ObservableObject {
     
-    @Published var results = [Book]()
+    @Published var books = [Book]()
     
     var searchText = "" {
         didSet { search() }
@@ -20,9 +26,14 @@ class SearchModel: ObservableObject {
     func search() {
         
         // TODO: get JSON from iTunesAPI
-        var results: iTunesAPIRes = iTunesAPIRes(results: [])
-        let urlChanged: [Book] = results.results.map { book in
-            book.imageURL = book.smallImageURL
+        let json: Data = testData
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        do {
+            let response = try decoder.decode(APIResponse.self, from: json)
+            books = response.results.map { Book(from: $0) }
+        }catch let error {
+            print("search error: \(error)")
         }
     }
     
@@ -30,8 +41,8 @@ class SearchModel: ObservableObject {
         return ""
     }
     
-    struct iTunesAPIRes {
-        var results: [Book]
+    struct APIResponse: Decodable {
+        var results: [iTunesAPIResponse]
     }
     
 }

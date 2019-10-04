@@ -14,6 +14,8 @@
 		BA06B54E2325E0740056803B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B54D2325E0740056803B /* Model.swift */; };
 		BA3C619323280A00004C5CE5 /* NewBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619223280A00004C5CE5 /* NewBookingView.swift */; };
 		BA3C619523280D15004C5CE5 /* LocalizedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */; };
+		BA425D2B2346E73C009F41D6 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA425D2A2346E73C009F41D6 /* TestData.swift */; };
+		BA425D2D2346F428009F41D6 /* iTunesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA425D2C2346F428009F41D6 /* iTunesAPIResponse.swift */; };
 		BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8334D62345E02A00AEA1EB /* SearchModel.swift */; };
 		BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */; };
 		BAA028702342ED580087AA52 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286F2342ED580087AA52 /* TestModel.swift */; };
@@ -57,6 +59,8 @@
 		BA06B54D2325E0740056803B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA3C619223280A00004C5CE5 /* NewBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingView.swift; sourceTree = "<group>"; };
 		BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKeys.swift; sourceTree = "<group>"; };
+		BA425D2A2346E73C009F41D6 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		BA425D2C2346F428009F41D6 /* iTunesAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPIResponse.swift; sourceTree = "<group>"; };
 		BA8334D52345DFC600AEA1EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BA8334D62345E02A00AEA1EB /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataRow.swift; sourceTree = "<group>"; };
@@ -188,10 +192,12 @@
 			isa = PBXGroup;
 			children = (
 				BABCEDEB2325B7C000B4BBAB /* Book.swift */,
+				BA425D2C2346F428009F41D6 /* iTunesAPIResponse.swift */,
 				BABCEDED2325B82D00B4BBAB /* BookingData.swift */,
 				BA06B54D2325E0740056803B /* Model.swift */,
 				BAA0286F2342ED580087AA52 /* TestModel.swift */,
 				BA8334D62345E02A00AEA1EB /* SearchModel.swift */,
+				BA425D2A2346E73C009F41D6 /* TestData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,12 +359,14 @@
 				BAA028702342ED580087AA52 /* TestModel.swift in Sources */,
 				BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */,
 				BABCEDEC2325B7C000B4BBAB /* Book.swift in Sources */,
+				BA425D2D2346F428009F41D6 /* iTunesAPIResponse.swift in Sources */,
 				BABCEDBE2325B6A700B4BBAB /* SceneDelegate.swift in Sources */,
 				BAC9FA9E2344A0A1001D8FC7 /* BookingDetailView.swift in Sources */,
 				BA06B54C2325D7550056803B /* UserDefaultsKeys.swift in Sources */,
 				BA06B54E2325E0740056803B /* Model.swift in Sources */,
 				BA06B5492325D5A90056803B /* UserDefaultsWrapper.swift in Sources */,
 				BAC9FAA02344A2B3001D8FC7 /* Extensions.swift in Sources */,
+				BA425D2B2346E73C009F41D6 /* TestData.swift in Sources */,
 				BA06B5472325D5A90056803B /* UserDefaultConvertibles.swift in Sources */,
 				BAC9FAA223454534001D8FC7 /* LinkImage.swift in Sources */,
 				BA06B5482325D5A90056803B /* UserDefaultsExtension.swift in Sources */,
