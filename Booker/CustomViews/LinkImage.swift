@@ -17,8 +17,7 @@ struct LinkImage<Placeholder>: View where Placeholder: View {
     var body: some View {
         loader.data.map { AnyView(
             Image(data: $0)?.resizable().aspectRatio(contentMode: .fit))
-            } ?? AnyView(
-                placeholder.onAppear { self.loader.load() })
+            } ?? AnyView(placeholder)
     }
     
     init(_ urlString: String?, @ViewBuilder placeholder: () -> Placeholder) {
@@ -47,6 +46,7 @@ class ImageLoader: ObservableObject {
     
     init(urlString: String?) {
         self.urlString = urlString
+        load()
     }
     
     func callAsFunction() { load() }
@@ -54,7 +54,7 @@ class ImageLoader: ObservableObject {
     func load() {
         if let string = urlString,
             let url = URL(string: string) {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
+            URLSession.shared.dataTask(with: url) { (data, _, error) in
                 guard let result = data, error == nil else{
                     print(error!)
                     return

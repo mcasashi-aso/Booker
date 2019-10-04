@@ -19,6 +19,11 @@ class SearchModel: ObservableObject {
     
     func search() {
         
+        // TODO: get JSON from iTunesAPI
+        var results: iTunesAPIRes = iTunesAPIRes(results: [])
+        let urlChanged: [Book] = results.results.map { book in
+            book.imageURL = book.smallImageURL
+        }
     }
     
     func comfirmToURLString() -> String {

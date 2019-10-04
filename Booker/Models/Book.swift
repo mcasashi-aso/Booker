@@ -14,12 +14,14 @@ struct Book: Hashable, Identifiable {
     var name: String
     var writer: String
     var about: String?
-    var imageURL: String?
-    var url: String?
+    var imageURL: URL?
+    var smallImageURL: URL? = nil
+    var url: URL?
     var releaseDate: Date?
     
-    init(name: String, writer: String, imageURL: String? = nil, url: String? = nil) {
-        (self.name, self.writer, self.imageURL, self.url) = (name, writer, imageURL, url)
+    init(name: String, writer: String, about: String? = nil, imageURL: URL? = nil, url: URL? = nil, releaseDate: Date? = nil) {
+        (self.name, self.writer, self.about, self.imageURL, self.url, self.releaseDate)
+            = (name, writer, about, imageURL, url, releaseDate)
     }
 }
 
@@ -33,7 +35,7 @@ extension Book: Codable, UserDefaultConvertible {
     private enum CodingKeys: String, CodingKey {
         case name = "trackName"
         case writer = "artistName"
-        case imageURL = "artworkUrl100"
+        case smallImageURL = "artworkUrl100"
         case url = "trackViewUrl"
         case about = "description"
         case releaseDate = "releaseDate"

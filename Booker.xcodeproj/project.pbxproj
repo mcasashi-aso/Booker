@@ -148,7 +148,6 @@
 				BABCEDBF2325B6A700B4BBAB /* ContentView.swift */,
 				BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */,
 				BA3C619223280A00004C5CE5 /* NewBookingView.swift */,
-				BA8334D62345E02A00AEA1EB /* SearchModel.swift */,
 				BAC9FA9D2344A0A1001D8FC7 /* BookingDetailView.swift */,
 				BAC9FAA52345DE7F001D8FC7 /* CustomViews */,
 				BABCEDC12325B6AC00B4BBAB /* Assets.xcassets */,
@@ -192,6 +191,7 @@
 				BABCEDED2325B82D00B4BBAB /* BookingData.swift */,
 				BA06B54D2325E0740056803B /* Model.swift */,
 				BAA0286F2342ED580087AA52 /* TestModel.swift */,
+				BA8334D62345E02A00AEA1EB /* SearchModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
