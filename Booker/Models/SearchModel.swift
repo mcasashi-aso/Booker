@@ -12,10 +12,11 @@ import Combine
 protocol SearchModelProtocol {
     var books: [Book] { get set }
     var searchText: String { get set }
-    
+    func search()
+    func comfirmToURLString(_ original: String) -> String
 }
 
-class SearchModel: ObservableObject {
+class SearchModel: SearchModelProtocol, ObservableObject {
     
     @Published var books = [Book]()
     
@@ -37,8 +38,8 @@ class SearchModel: ObservableObject {
         }
     }
     
-    func comfirmToURLString() -> String {
-        return ""
+    func comfirmToURLString(_ original: String) -> String {
+        return original
     }
     
     struct APIResponse: Decodable {
