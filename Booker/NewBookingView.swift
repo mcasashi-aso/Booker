@@ -11,11 +11,12 @@ import SwiftUI
 struct NewBookingView: View {
     
     @State var data = BookingData(book: Book(name: "", writer: ""), about: "", opinion: "")
+    @ObservedObject var searchModel: SearchModelProtocol
     
     var body: some View {
         NavigationView {
             List {
-                TextField(.test, text: $data.book.name, onEditingChanged: { edited in
+                TextField(.test, text: $searchModel.searchText, onEditingChanged: { edited in
                     
                 }, onCommit: {
                     
@@ -28,6 +29,6 @@ struct NewBookingView: View {
 
 struct NewBookingView_Previews: PreviewProvider {
     static var previews: some View {
-        NewBookingView()
+        NewBookingView(searchModel: SearchModel())
     }
 }

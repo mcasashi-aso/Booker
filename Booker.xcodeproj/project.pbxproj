@@ -11,17 +11,18 @@
 		BA06B5482325D5A90056803B /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B5452325D5A80056803B /* UserDefaultsExtension.swift */; };
 		BA06B5492325D5A90056803B /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B5462325D5A80056803B /* UserDefaultsWrapper.swift */; };
 		BA06B54C2325D7550056803B /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B54B2325D7550056803B /* UserDefaultsKeys.swift */; };
-		BA06B54E2325E0740056803B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B54D2325E0740056803B /* Model.swift */; };
 		BA3C619323280A00004C5CE5 /* NewBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619223280A00004C5CE5 /* NewBookingView.swift */; };
 		BA3C619523280D15004C5CE5 /* LocalizedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */; };
-		BA425D2B2346E73C009F41D6 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA425D2A2346E73C009F41D6 /* TestData.swift */; };
-		BA425D2D2346F428009F41D6 /* iTunesAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA425D2C2346F428009F41D6 /* iTunesAPIResponse.swift */; };
+		BA4554122347BFE200E0B8D2 /* iTunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554112347BFE200E0B8D2 /* iTunesAPI.swift */; };
+		BA4554152347C3EE00E0B8D2 /* SearchModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554142347C3EE00E0B8D2 /* SearchModelProtocol.swift */; };
+		BA4554182347C41400E0B8D2 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554172347C41400E0B8D2 /* ModelProtocol.swift */; };
+		BA45541A2347C47700E0B8D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554192347C47700E0B8D2 /* Model.swift */; };
 		BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8334D62345E02A00AEA1EB /* SearchModel.swift */; };
 		BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */; };
 		BAA028702342ED580087AA52 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286F2342ED580087AA52 /* TestModel.swift */; };
 		BABCEDBC2325B6A700B4BBAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBB2325B6A700B4BBAB /* AppDelegate.swift */; };
 		BABCEDBE2325B6A700B4BBAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBD2325B6A700B4BBAB /* SceneDelegate.swift */; };
-		BABCEDC02325B6A700B4BBAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBF2325B6A700B4BBAB /* ContentView.swift */; };
+		BABCEDC02325B6A700B4BBAB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBF2325B6A700B4BBAB /* HomeView.swift */; };
 		BABCEDC22325B6AC00B4BBAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABCEDC12325B6AC00B4BBAB /* Assets.xcassets */; };
 		BABCEDC52325B6AC00B4BBAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BABCEDC42325B6AC00B4BBAB /* Preview Assets.xcassets */; };
 		BABCEDC82325B6AC00B4BBAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BABCEDC62325B6AC00B4BBAB /* LaunchScreen.storyboard */; };
@@ -56,11 +57,12 @@
 		BA06B5452325D5A80056803B /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		BA06B5462325D5A80056803B /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		BA06B54B2325D7550056803B /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
-		BA06B54D2325E0740056803B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA3C619223280A00004C5CE5 /* NewBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingView.swift; sourceTree = "<group>"; };
 		BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKeys.swift; sourceTree = "<group>"; };
-		BA425D2A2346E73C009F41D6 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
-		BA425D2C2346F428009F41D6 /* iTunesAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPIResponse.swift; sourceTree = "<group>"; };
+		BA4554112347BFE200E0B8D2 /* iTunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPI.swift; sourceTree = "<group>"; };
+		BA4554142347C3EE00E0B8D2 /* SearchModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelProtocol.swift; sourceTree = "<group>"; };
+		BA4554172347C41400E0B8D2 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		BA4554192347C47700E0B8D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA8334D52345DFC600AEA1EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BA8334D62345E02A00AEA1EB /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataRow.swift; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		BABCEDB82325B6A700B4BBAB /* Booker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABCEDBB2325B6A700B4BBAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BABCEDBD2325B6A700B4BBAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BABCEDBF2325B6A700B4BBAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BABCEDBF2325B6A700B4BBAB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BABCEDC12325B6AC00B4BBAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BABCEDC42325B6AC00B4BBAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BABCEDC72325B6AC00B4BBAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,35 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		BA4554132347C3D400E0B8D2 /* SearchModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA4554142347C3EE00E0B8D2 /* SearchModelProtocol.swift */,
+				BA8334D62345E02A00AEA1EB /* SearchModel.swift */,
+				BA4554112347BFE200E0B8D2 /* iTunesAPI.swift */,
+			);
+			path = SearchModel;
+			sourceTree = "<group>";
+		};
+		BA4554162347C40300E0B8D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA4554172347C41400E0B8D2 /* ModelProtocol.swift */,
+				BA4554192347C47700E0B8D2 /* Model.swift */,
+				BAA0286F2342ED580087AA52 /* TestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA45541B2347C58D00E0B8D2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BABCEDBF2325B6A700B4BBAB /* HomeView.swift */,
+				BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		BABCEDAF2325B6A700B4BBAB = {
 			isa = PBXGroup;
 			children = (
@@ -149,8 +180,7 @@
 				BABCEDBD2325B6A700B4BBAB /* SceneDelegate.swift */,
 				BA06B54A2325D5AC0056803B /* Tools */,
 				BAC9FAA32345DE39001D8FC7 /* Models */,
-				BABCEDBF2325B6A700B4BBAB /* ContentView.swift */,
-				BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */,
+				BA45541B2347C58D00E0B8D2 /* Home */,
 				BA3C619223280A00004C5CE5 /* NewBookingView.swift */,
 				BAC9FA9D2344A0A1001D8FC7 /* BookingDetailView.swift */,
 				BAC9FAA52345DE7F001D8FC7 /* CustomViews */,
@@ -191,13 +221,10 @@
 		BAC9FAA32345DE39001D8FC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BABCEDEB2325B7C000B4BBAB /* Book.swift */,
-				BA425D2C2346F428009F41D6 /* iTunesAPIResponse.swift */,
 				BABCEDED2325B82D00B4BBAB /* BookingData.swift */,
-				BA06B54D2325E0740056803B /* Model.swift */,
-				BAA0286F2342ED580087AA52 /* TestModel.swift */,
-				BA8334D62345E02A00AEA1EB /* SearchModel.swift */,
-				BA425D2A2346E73C009F41D6 /* TestData.swift */,
+				BABCEDEB2325B7C000B4BBAB /* Book.swift */,
+				BA4554162347C40300E0B8D2 /* Model */,
+				BA4554132347C3D400E0B8D2 /* SearchModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,19 +386,20 @@
 				BAA028702342ED580087AA52 /* TestModel.swift in Sources */,
 				BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */,
 				BABCEDEC2325B7C000B4BBAB /* Book.swift in Sources */,
-				BA425D2D2346F428009F41D6 /* iTunesAPIResponse.swift in Sources */,
 				BABCEDBE2325B6A700B4BBAB /* SceneDelegate.swift in Sources */,
 				BAC9FA9E2344A0A1001D8FC7 /* BookingDetailView.swift in Sources */,
 				BA06B54C2325D7550056803B /* UserDefaultsKeys.swift in Sources */,
-				BA06B54E2325E0740056803B /* Model.swift in Sources */,
 				BA06B5492325D5A90056803B /* UserDefaultsWrapper.swift in Sources */,
 				BAC9FAA02344A2B3001D8FC7 /* Extensions.swift in Sources */,
-				BA425D2B2346E73C009F41D6 /* TestData.swift in Sources */,
+				BA4554152347C3EE00E0B8D2 /* SearchModelProtocol.swift in Sources */,
 				BA06B5472325D5A90056803B /* UserDefaultConvertibles.swift in Sources */,
 				BAC9FAA223454534001D8FC7 /* LinkImage.swift in Sources */,
+				BA4554122347BFE200E0B8D2 /* iTunesAPI.swift in Sources */,
 				BA06B5482325D5A90056803B /* UserDefaultsExtension.swift in Sources */,
 				BA3C619523280D15004C5CE5 /* LocalizedStringKeys.swift in Sources */,
-				BABCEDC02325B6A700B4BBAB /* ContentView.swift in Sources */,
+				BA4554182347C41400E0B8D2 /* ModelProtocol.swift in Sources */,
+				BABCEDC02325B6A700B4BBAB /* HomeView.swift in Sources */,
+				BA45541A2347C47700E0B8D2 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

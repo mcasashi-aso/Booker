@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  Booker
 //
 //  Created by Masashi Aso on 2019/09/09.
@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-struct ContentView: View {
+struct HomeView: View {
     
     @ObservedObject var searchModel = SearchModel()
     
@@ -31,19 +31,14 @@ struct ContentView: View {
                     Image(systemName: "square.and.pencil").font(.body)
                 })
                 .sheet(isPresented: $newIsPresented, onDismiss: nil) {
-                    NewBookingView()
+                    NewBookingView(searchModel: SearchModel())
             }
-            .navigationBarItems(leading: Button(action: {
-                self.searchModel.search()
-            }) {
-                Text("search")
-            })
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(model: TestModel())
+        HomeView(model: TestModel())
     }
 }

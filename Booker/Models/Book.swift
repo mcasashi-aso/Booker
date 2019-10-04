@@ -26,21 +26,6 @@ struct Book: Hashable, Identifiable {
         self.imageURL = imageURL; self.smallImageURL = smallImageURL
         self.url = url; self.releaseDate = releaseDate
     }
-    
-    init(from iTunesAPIResponse: iTunesAPIResponse) {
-        name = iTunesAPIResponse.trackName
-        writer = iTunesAPIResponse.artistName
-        about = iTunesAPIResponse.description
-        smallImageURL = iTunesAPIResponse.artworkUrl100
-        if var url = iTunesAPIResponse.artworkUrl100 {
-            url.deleteLastPathComponent()
-            url.appendPathComponent("1000x1000bb.jpg")
-            imageURL = url
-        }
-        url = iTunesAPIResponse.trackViewUrl
-        releaseDate = iTunesAPIResponse.releaseDate
-        
-    }
 }
 
 extension Book: CustomStringConvertible, CustomDebugStringConvertible, CustomReflectable {

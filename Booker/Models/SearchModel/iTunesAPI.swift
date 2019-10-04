@@ -1,12 +1,30 @@
 //
-//  TestData.swift
+//  iTunesAPI.swift
 //  Booker
 //
-//  Created by Masashi Aso on 2019/10/04.
+//  Created by Masashi Aso on 2019/10/05.
 //  Copyright © 2019 Masashi Aso. All rights reserved.
 //
 
 import Foundation
+
+struct iTunesAPIResponse: Decodable {
+    struct Result: Decodable {
+        let artworkUrl100: String?
+        let trackViewUrl: String?
+        let releaseDate: Date?
+        let trackName: String
+        let description: String?
+        let artistName: String
+        private init() {
+            artworkUrl100 = nil; trackViewUrl = nil; releaseDate = nil;
+            trackName = ""; description = nil; artistName = ""
+        }
+    }
+    var results: [Result]
+}
+
+
 
 let testData = """
 {

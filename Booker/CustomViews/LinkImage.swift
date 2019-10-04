@@ -48,14 +48,13 @@ class ImageLoader: ObservableObject {
     }
     
     func load(_ url: URL?) {
-        if let url = url {
-            URLSession.shared.dataTask(with: url) { (data, _, error) in
-                if let error = error { print("Error: \(error)") }
-                
-                DispatchQueue.main.async {
-                    self.data = data
-                }
-            }.resume()
-        }
+        guard let url = url else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error { print("Error: \(error)") }
+            
+            DispatchQueue.main.async {
+                self.data = data
+            }
+        }.resume()
     }
 }
