@@ -20,7 +20,7 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                 TextField("title", text: $searchModel.searchText,
                           onEditingChanged: { _ in self.editingBookTitle = true },
                           onCommit: {
-                            
+                            UIApplication.shared.windows.first { $0.isKeyWindow }?.endEditing(true)
                             self.editingBookTitle = false
                 })
                 
