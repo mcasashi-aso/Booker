@@ -9,13 +9,11 @@
 import SwiftUI
 import Combine
 
-struct HomeView: View {
-    
-    @ObservedObject var searchModel = SearchModel()
+struct HomeView<ObservableModel: ModelProtocol>: View {
     
     @State var newIsPresented = false
     
-    @State var model: ModelProtocol
+    @ObservedObject var model: ObservableModel
     
     var body: some View {
         NavigationView {

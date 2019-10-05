@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import Combine
 
-protocol ModelProtocol {
+protocol ModelProtocol: ObservableObject {
     var bookingDatas: [BookingData] { get set }
 }

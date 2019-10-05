@@ -20,6 +20,7 @@
 		BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8334D62345E02A00AEA1EB /* SearchModel.swift */; };
 		BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */; };
 		BAA028702342ED580087AA52 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286F2342ED580087AA52 /* TestModel.swift */; };
+		BAABB1D523486AAB0038E725 /* SuggestedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABB1D423486AAB0038E725 /* SuggestedBookView.swift */; };
 		BABCEDBC2325B6A700B4BBAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBB2325B6A700B4BBAB /* AppDelegate.swift */; };
 		BABCEDBE2325B6A700B4BBAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBD2325B6A700B4BBAB /* SceneDelegate.swift */; };
 		BABCEDC02325B6A700B4BBAB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCEDBF2325B6A700B4BBAB /* HomeView.swift */; };
@@ -67,6 +68,7 @@
 		BA8334D62345E02A00AEA1EB /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataRow.swift; sourceTree = "<group>"; };
 		BAA0286F2342ED580087AA52 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		BAABB1D423486AAB0038E725 /* SuggestedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedBookView.swift; sourceTree = "<group>"; };
 		BABCEDB82325B6A700B4BBAB /* Booker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BABCEDBB2325B6A700B4BBAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BABCEDBD2325B6A700B4BBAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,8 +151,27 @@
 			children = (
 				BABCEDBF2325B6A700B4BBAB /* HomeView.swift */,
 				BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */,
+				BAC9FA9D2344A0A1001D8FC7 /* BookingDetailView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		BAABB1D323486A900038E725 /* NewBooking */ = {
+			isa = PBXGroup;
+			children = (
+				BA3C619223280A00004C5CE5 /* NewBookingView.swift */,
+				BAABB1D423486AAB0038E725 /* SuggestedBookView.swift */,
+			);
+			path = NewBooking;
+			sourceTree = "<group>";
+		};
+		BAABB1D623487C7B0038E725 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA45541B2347C58D00E0B8D2 /* Home */,
+				BAABB1D323486A900038E725 /* NewBooking */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BABCEDAF2325B6A700B4BBAB = {
@@ -180,9 +201,7 @@
 				BABCEDBD2325B6A700B4BBAB /* SceneDelegate.swift */,
 				BA06B54A2325D5AC0056803B /* Tools */,
 				BAC9FAA32345DE39001D8FC7 /* Models */,
-				BA45541B2347C58D00E0B8D2 /* Home */,
-				BA3C619223280A00004C5CE5 /* NewBookingView.swift */,
-				BAC9FA9D2344A0A1001D8FC7 /* BookingDetailView.swift */,
+				BAABB1D623487C7B0038E725 /* Views */,
 				BAC9FAA52345DE7F001D8FC7 /* CustomViews */,
 				BABCEDC12325B6AC00B4BBAB /* Assets.xcassets */,
 				BABCEDC62325B6AC00B4BBAB /* LaunchScreen.storyboard */,
@@ -386,6 +405,7 @@
 				BAA028702342ED580087AA52 /* TestModel.swift in Sources */,
 				BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */,
 				BABCEDEC2325B7C000B4BBAB /* Book.swift in Sources */,
+				BAABB1D523486AAB0038E725 /* SuggestedBookView.swift in Sources */,
 				BABCEDBE2325B6A700B4BBAB /* SceneDelegate.swift in Sources */,
 				BAC9FA9E2344A0A1001D8FC7 /* BookingDetailView.swift in Sources */,
 				BA06B54C2325D7550056803B /* UserDefaultsKeys.swift in Sources */,

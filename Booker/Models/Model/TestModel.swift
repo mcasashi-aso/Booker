@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class TestModel: ModelProtocol, ObservableObject {
+class TestModel: ModelProtocol {
     
     init() {}
     
@@ -32,9 +32,11 @@ class TestModel: ModelProtocol, ObservableObject {
                                 about: "消極的な人よ、声を上げよ。……いや、上げなくてよい。",
                                 opinion: "読まねば")
         
-        if let fromData = try? JSONDecoder().decode(Book.self, from: testData) {
-            let fromDataData = BookingData(book: fromData, about: "fromData", opinion: "")
-            return [cData, fromDataData]
+        if let fromData = try? JSONDecoder().decode(iTunesAPIResponse.self, from: testData) {
+            let hoge = fromData.results
+                .map({ itunesAPIResponseToBook(from: $0) }).enumerated()
+                .map({ BookingData(book: $1, about: "book\($0)", opinion: "opinion for \($1.name)")})
+            return [cData] + hoge
         }
         
         return [aData, bData, cData]

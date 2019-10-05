@@ -35,7 +35,7 @@ class SearchModel: SearchModelProtocol {
             do {
                 let decoded = try self.decoder.decode(iTunesAPIResponse.self, from: result)
                 DispatchQueue.main.async {
-                    self.books = decoded.results.map { self.itunesAPIResponseToBook(from: $0) }
+                    self.books = decoded.results.map { itunesAPIResponseToBook(from: $0) }
                 }
             }catch let error {
                 print("search error: \(error)")
