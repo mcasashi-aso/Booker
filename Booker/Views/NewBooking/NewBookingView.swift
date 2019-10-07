@@ -22,9 +22,12 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                           onCommit: { self.endEditing() })
                 
                 if editingBookTitle {
-                    HorizontalSelectView(searchModel.books, selecting: $data.book) { book in
-                        SuggestedBookView(book: book)
-                    }
+                    HorizontalSelectView(searchModel.books, selection: $data.book) { book in
+                        ZStack {
+                            SuggestedBookView(book: book)
+                            if book == self.data.book { Image(systemName: "checkmark") }
+                        }
+                    }.frame(height: 200)
                 }
             }.navigationBarTitle("New Booking")
         }

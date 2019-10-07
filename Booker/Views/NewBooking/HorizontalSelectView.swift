@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HorizontalSelectView<Value, Cell>: View where Value: Identifiable, Cell: View {
     var datas: [Value]
-    @Binding var selecting: Value
+    @Binding var selection: Value
     
     var cell: (Value) -> Cell
     
@@ -21,7 +21,7 @@ struct HorizontalSelectView<Value, Cell>: View where Value: Identifiable, Cell: 
                     ForEach(datas) { data in
                         self.cell(data)
                             .gesture(TapGesture(count: 1).onEnded {
-                                withAnimation { self.selecting = data }
+                                withAnimation { self.selection = data }
                             })
                     }
                 }
@@ -31,10 +31,10 @@ struct HorizontalSelectView<Value, Cell>: View where Value: Identifiable, Cell: 
         }
     }
     
-    init(_ datas: [Value], selecting: Binding<Value>,
-         @ViewBuilder cell: @escaping (Value) -> Cell) {
+    init(_ datas: [Value], selection: Binding<Value>,
+         cell: @escaping (Value) -> Cell) {
         self.datas = datas
-        self._selecting = selecting
+        self._selection = selection
         self.cell = cell
     }
 }
@@ -46,10 +46,19 @@ fileprivate struct HorizontalSelectView_For_Previews: View {
     }
     @State var selecting: Season = .spring
     var body: some View {
-        HorizontalSelectView(Season.allCases, selecting: $selecting) { season in
-            Text(season.rawValue)
-                .animation(.spring())
-                .foregroundColor(season == self.selecting ? .red : .black)
+        HorizontalSelectView(Season.allCases, selection: $selecting) { season in
+            ZStack() {
+                Text(season.rawValue)
+                    .font(.largeTitle)
+                    .animation(.spring())
+                    .foregroundColor(season == self.selecting ? .red : .black)
+                if self.selecting == season {
+                    Color(.displayP3, red: 0, green: 0, blue: 0, opacity: 0.5)
+                    Image(systemName: "checkmark")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                }
+            }.frame(width: 150, height: 200)
         }
     }
 }
