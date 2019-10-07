@@ -18,8 +18,13 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
         NavigationView {
             List {
                 TextField("title", text: $searchModel.searchText,
-                          onEditingChanged: { _ in self.editingBookTitle = true },
+                          onEditingChanged: { _ in
+                            self.searchModel.search()
+                            self.editingBookTitle = true },
                           onCommit: { self.endEditing() })
+                
+                Text("\(searchModel.searchText)-\(searchModel.books.count): \(searchModel.books[safe: 0]?.description ?? "")")
+                    .lineLimit(1)
                 
                 if editingBookTitle {
                     HorizontalSelectView(searchModel.books, selection: $data.book) { book in

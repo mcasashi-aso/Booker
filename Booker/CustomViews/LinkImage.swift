@@ -15,9 +15,16 @@ struct LinkImage<Placeholder>: View where Placeholder: View {
     var placeholder: Placeholder
     
     var body: some View {
-        loader.data.map { AnyView(
-            Image(data: $0)?.resizable().aspectRatio(contentMode: .fit)
-            )} ?? AnyView(placeholder)
+        if let data = loader.data {
+            return AnyView(
+                Image(data: data)?
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            )
+        }else {
+            return AnyView(placeholder)
+        }
     }
     
     init(_ url: URL?, @ViewBuilder placeholder: () -> Placeholder) {

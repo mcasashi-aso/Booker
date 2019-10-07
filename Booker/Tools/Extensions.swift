@@ -54,5 +54,14 @@ extension Image {
     }
 }
 
+// MARK: - Array
+extension Array {
+    subscript(safe index: Index) -> Element? {
+        get {
+            indices.contains(index) ? self[index] : nil
+        }
+    }
+}
+
 // MARK: - Environment
 

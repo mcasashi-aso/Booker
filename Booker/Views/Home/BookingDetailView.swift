@@ -15,30 +15,29 @@ struct BookingDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                HStack {
-                    LinkImage(data.book.imageURL) {
-                        Image(systemName: "book").font(.largeTitle)
-                    }   .padding()
-                        .frame(width: UIScreen.main.bounds.width,
-                           height: UIScreen.main.bounds.width / 16 * 9)
-                    
-                    VStack(alignment: .leading) {
-                        HStack(alignment: .firstTextBaseline) {
+                NavigationLink(destination: BookView(book: data.book)) {
+                    HStack {
+                        LinkImage(data.book.imageURL) {
+                            Image(systemName: "book")
+                                .font(.largeTitle)
+                        }   .padding()
+                            .frame(width: UIScreen.main.bounds.width / 256 * 81)
+                        
+                        VStack(alignment: .leading) {
                             Text(data.book.writer ?? "")
                             Text(data.book.releaseDate?.dayString ?? "")
-                        }.lineLimit(1)
-                        Text(data.book.about ?? "")
+                            Button(action: {}) {
+                                Text("Apple Books")
+                            }.buttonStyle(PlainButtonStyle())
+                        }
                     }
-                }
-                
-                if data.book.about != nil {
-                    Text(data.book.about!).padding()
-                }
+                }   .frame(height: UIScreen.main.bounds.width / 16 * 9)
+                    .foregroundColor(.black)
                 
                 Divider()
                 Text(data.about).padding()
             }
-        }.navigationBarTitle(data.book.name)
+        }
     }
 }
 

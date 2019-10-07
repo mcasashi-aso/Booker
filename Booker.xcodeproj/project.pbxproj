@@ -13,6 +13,7 @@
 		BA06B54C2325D7550056803B /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B54B2325D7550056803B /* UserDefaultsKeys.swift */; };
 		BA3C619323280A00004C5CE5 /* NewBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619223280A00004C5CE5 /* NewBookingView.swift */; };
 		BA3C619523280D15004C5CE5 /* LocalizedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */; };
+		BA41622C234B61E6006B5E5C /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41622B234B61E6006B5E5C /* BookView.swift */; };
 		BA4554122347BFE200E0B8D2 /* iTunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554112347BFE200E0B8D2 /* iTunesAPI.swift */; };
 		BA4554152347C3EE00E0B8D2 /* SearchModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554142347C3EE00E0B8D2 /* SearchModelProtocol.swift */; };
 		BA4554182347C41400E0B8D2 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554172347C41400E0B8D2 /* ModelProtocol.swift */; };
@@ -62,6 +63,7 @@
 		BA06B54B2325D7550056803B /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		BA3C619223280A00004C5CE5 /* NewBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingView.swift; sourceTree = "<group>"; };
 		BA3C619423280D15004C5CE5 /* LocalizedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKeys.swift; sourceTree = "<group>"; };
+		BA41622B234B61E6006B5E5C /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		BA4554112347BFE200E0B8D2 /* iTunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPI.swift; sourceTree = "<group>"; };
 		BA4554142347C3EE00E0B8D2 /* SearchModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelProtocol.swift; sourceTree = "<group>"; };
 		BA4554172347C41400E0B8D2 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				BABCEDBF2325B6A700B4BBAB /* HomeView.swift */,
 				BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */,
 				BAC9FA9D2344A0A1001D8FC7 /* BookingDetailView.swift */,
+				BA41622B234B61E6006B5E5C /* BookView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				BABCEDBC2325B6A700B4BBAB /* AppDelegate.swift in Sources */,
 				BABCEDEE2325B82D00B4BBAB /* BookingData.swift in Sources */,
 				BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */,
+				BA41622C234B61E6006B5E5C /* BookView.swift in Sources */,
 				BAA028702342ED580087AA52 /* TestModel.swift in Sources */,
 				BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */,
 				BABCEDEC2325B7C000B4BBAB /* Book.swift in Sources */,
