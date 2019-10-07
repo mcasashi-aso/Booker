@@ -32,9 +32,13 @@ class TestModel: ModelProtocol {
                                 about: "消極的な人よ、声を上げよ。……いや、上げなくてよい。",
                                 opinion: "読まねば")
         
+        do {
+            _ = try JSONDecoder().decode(iTunesAPIResponse.self, from: testData)
+        }catch let error { print(error) }
+        
         if let fromData = try? JSONDecoder().decode(iTunesAPIResponse.self, from: testData) {
             let hoge = fromData.results
-                .map({ itunesAPIResponseToBook(from: $0) }).enumerated()
+                .map({ SearchModel.itunesAPIResponseToBook(from: $0) }).enumerated()
                 .map({ BookingData(book: $1, about: "book\($0)", opinion: "opinion for \($1.name)")})
             return [cData] + hoge
         }

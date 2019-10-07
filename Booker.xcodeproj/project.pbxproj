@@ -18,6 +18,9 @@
 		BA4554182347C41400E0B8D2 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554172347C41400E0B8D2 /* ModelProtocol.swift */; };
 		BA45541A2347C47700E0B8D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554192347C47700E0B8D2 /* Model.swift */; };
 		BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8334D62345E02A00AEA1EB /* SearchModel.swift */; };
+		BA95A5872349007800839681 /* HorizontalPickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95A5862349007800839681 /* HorizontalPickerStyle.swift */; };
+		BA95A589234AA76700839681 /* HorizontalSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95A588234AA76700839681 /* HorizontalSelectView.swift */; };
+		BA95A58B234AD5A700839681 /* MyStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95A58A234AD5A700839681 /* MyStack.swift */; };
 		BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */; };
 		BAA028702342ED580087AA52 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286F2342ED580087AA52 /* TestModel.swift */; };
 		BAABB1D523486AAB0038E725 /* SuggestedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABB1D423486AAB0038E725 /* SuggestedBookView.swift */; };
@@ -66,6 +69,9 @@
 		BA4554192347C47700E0B8D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA8334D52345DFC600AEA1EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BA8334D62345E02A00AEA1EB /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		BA95A5862349007800839681 /* HorizontalPickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPickerStyle.swift; sourceTree = "<group>"; };
+		BA95A588234AA76700839681 /* HorizontalSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSelectView.swift; sourceTree = "<group>"; };
+		BA95A58A234AD5A700839681 /* MyStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStack.swift; sourceTree = "<group>"; };
 		BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataRow.swift; sourceTree = "<group>"; };
 		BAA0286F2342ED580087AA52 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		BAABB1D423486AAB0038E725 /* SuggestedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedBookView.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			children = (
 				BA3C619223280A00004C5CE5 /* NewBookingView.swift */,
 				BAABB1D423486AAB0038E725 /* SuggestedBookView.swift */,
+				BA95A588234AA76700839681 /* HorizontalSelectView.swift */,
 			);
 			path = NewBooking;
 			sourceTree = "<group>";
@@ -262,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				BAC9FAA123454534001D8FC7 /* LinkImage.swift */,
+				BA95A5862349007800839681 /* HorizontalPickerStyle.swift */,
+				BA95A58A234AD5A700839681 /* MyStack.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -417,9 +426,12 @@
 				BA4554122347BFE200E0B8D2 /* iTunesAPI.swift in Sources */,
 				BA06B5482325D5A90056803B /* UserDefaultsExtension.swift in Sources */,
 				BA3C619523280D15004C5CE5 /* LocalizedStringKeys.swift in Sources */,
+				BA95A589234AA76700839681 /* HorizontalSelectView.swift in Sources */,
+				BA95A5872349007800839681 /* HorizontalPickerStyle.swift in Sources */,
 				BA4554182347C41400E0B8D2 /* ModelProtocol.swift in Sources */,
 				BABCEDC02325B6A700B4BBAB /* HomeView.swift in Sources */,
 				BA45541A2347C47700E0B8D2 /* Model.swift in Sources */,
+				BA95A58B234AD5A700839681 /* MyStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

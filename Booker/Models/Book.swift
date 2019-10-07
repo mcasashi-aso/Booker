@@ -12,7 +12,7 @@ struct Book: Hashable, Identifiable {
     var id = UUID()
     
     var name: String
-    var writer: String
+    var writer: String?
     var about: String?
     var imageURL: URL? = nil
     var smallImageURL: URL?
@@ -29,7 +29,7 @@ struct Book: Hashable, Identifiable {
 }
 
 extension Book: CustomStringConvertible, CustomDebugStringConvertible, CustomReflectable {
-    var description: String { "\(name)  -\(writer)" }
+    var description: String { "\(name)  -\(writer ?? "")" }
     var debugDescription: String { "\(id)  -\(name)" }
     var customMirror: Mirror { Mirror(reflecting: self) }
 }

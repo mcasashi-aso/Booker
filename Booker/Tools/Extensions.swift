@@ -53,3 +53,6 @@ extension Image {
         }
     }
 }
+
+// MARK: - Environment
+

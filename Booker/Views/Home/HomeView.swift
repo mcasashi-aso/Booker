@@ -26,7 +26,7 @@ struct HomeView<ObservableModel: ModelProtocol>: View {
                 .navigationBarItems(trailing: Button(action: {
                     self.newIsPresented.toggle()
                 }) {
-                    Image(systemName: "square.and.pencil")
+                    Image(systemName: "square.and.pencil").imageScale(.large)
                 })
                 .sheet(isPresented: $newIsPresented, onDismiss: nil) {
                     NewBookingView(searchModel: SearchModel())

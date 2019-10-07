@@ -16,6 +16,15 @@ struct BookingData: Hashable, Identifiable, Comparable {
     var about = ""
     var opinion = ""
     
+    var readAgain: Bool {
+        get { (UserDefaults.standard.get(.dataReadAgain) ?? []).contains(self) }
+        set {
+            var datas = UserDefaults.standard.get(.dataReadAgain) ?? []
+            if newValue { datas.insert(self) }else { datas.remove(self) }
+            UserDefaults.standard.set(datas, forKey: .dataReadAgain)
+        }
+    }
+    
     static func < (lhs: BookingData, rhs: BookingData) -> Bool {
         lhs.createDate < rhs.createDate
     }

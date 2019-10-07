@@ -27,8 +27,10 @@ struct BookingDataRow: View {
                     .lineLimit(1)
             }
             Spacer()
-            Text(data.createDate.dayString)
-        }
+            if data.readAgain {
+                Image(systemName: "checkmark")
+            }
+        }.padding(.trailing, 15)
     }
 }
 
@@ -37,7 +39,7 @@ struct BookingDataRow_Previews: PreviewProvider {
         Group {
             BookingDataRow(data: TestModel().bookingDatas[0])
             BookingDataRow(data: TestModel().bookingDatas[1])
-            BookingDataRow(data: TestModel().bookingDatas[2])
+//            BookingDataRow(data: TestModel().bookingDatas[2])
         }
             .previewLayout(.fixed(width: 375, height: 60))
     }

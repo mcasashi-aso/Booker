@@ -19,43 +19,25 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
             List {
                 TextField("title", text: $searchModel.searchText,
                           onEditingChanged: { _ in self.editingBookTitle = true },
-                          onCommit: {
-                            UIApplication.shared.windows.first { $0.isKeyWindow }?.endEditing(true)
-                            self.editingBookTitle = false
-                })
+                          onCommit: { self.endEditing() })
                 
                 if editingBookTitle {
-                    SearchResultsView(books: searchModel.books, data: $data)
-                        .frame(height: 200)
+                    HorizontalSelectView(searchModel.books, selecting: $data.book) { book in
+                        SuggestedBookView(book: book)
+                    }
                 }
             }.navigationBarTitle("New Booking")
         }
+    }
+    
+    func endEditing() {
+        UIApplication.shared.windows.first { $0.isKeyWindow }?.endEditing(true)
+        editingBookTitle = false
     }
 }
 
 struct NewBookingView_Previews: PreviewProvider {
     static var previews: some View {
         NewBookingView(searchModel: SearchModel())
-    }
-}
-
-
-struct SearchResultsView: View {
-    var books: [Book]
-    @Binding var data: BookingData
-    var body: some View {
-        if !books.isEmpty { return AnyView(
-            ScrollView(.horizontal) {
-                ForEach(books) { book in
-                    SuggestedBookView(book: book)
-                        .frame(width: 150)
-                        .gesture(TapGesture(count: 1).onEnded {
-                            self.data.book = book
-                        })
-                }
-            })
-        }else { return AnyView(
-            Text("No Result")
-        )}
     }
 }
