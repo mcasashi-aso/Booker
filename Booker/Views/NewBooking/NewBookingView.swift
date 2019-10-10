@@ -28,6 +28,7 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                     Text("\(searchModel.searchText)-\(searchModel.books.count): \(searchModel.books[safe: 0]?.description ?? "")")
                         .lineLimit(1)
                     
+                    // TODO: 高さ0のCell作れなくね
                     HorizontalSelectView(searchModel.books, selection: $data.book) { book in
                         ZStack {
                             SuggestedBookView(book: book)
@@ -41,12 +42,12 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                 }
                 
                 Section(header: Text("about")) {
+                    // TODO: 改行できなくね？まじ？
                     TextField("about", text: $data.about)
                         .lineLimit(0)
-                        .frame(minWidth: 100, maxWidth: UIScreen.main.bounds.width, minHeight: 50, idealHeight: 200, maxHeight: 200, alignment: .topLeading)
+                        .frame(minWidth: 100, maxWidth: 200, minHeight: 50, idealHeight: 200, maxHeight: 200, alignment: .topLeading)
 
-                    TextField("opinion", text: $data.opinion)
-                    .frame(height: 200)
+                   
                 }
             }
             .listStyle(GroupedListStyle())
