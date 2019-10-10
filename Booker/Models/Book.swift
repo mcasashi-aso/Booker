@@ -11,20 +11,24 @@ import Foundation
 struct Book: Hashable, Identifiable {
     var id = UUID()
     
-    var name: String
-    var writer: String?
-    var about: String?
-    var imageURL: URL? = nil
-    var smallImageURL: URL?
-    var url: URL?
-    var releaseDate: Date?
+    let name: String
+    let writer: String?
+    let about: String?
+    let imageURL: URL?
+    let smallImageURL: URL?
+    let url: URL?
+    let releaseDate: Date?
+    let price: String?
+    let genres: [String]?
     
-    init(name: String, writer: String, about: String? = nil,
+    init(name: String, writer: String? = nil, about: String? = nil,
          imageURL: URL? = nil, smallImageURL: URL? = nil,
-         url: URL? = nil, releaseDate: Date? = nil) {
+         url: URL? = nil, releaseDate: Date? = nil,
+         price: String? = nil, genres: [String]? = nil) {
         self.name = name; self.writer = writer; self.about = about
         self.imageURL = imageURL; self.smallImageURL = smallImageURL
         self.url = url; self.releaseDate = releaseDate
+        self.price = price; self.genres = genres
     }
 }
 

@@ -16,7 +16,7 @@ class SearchModel: SearchModelProtocol {
         decoder.dateDecodingStrategy = .iso8601
         return decoder
     }()
-    @Published var books = [Book]()
+    @Published var books = Model().bookingDatas.map { $0.book }
     
     var searchText = "" {
         didSet { search() }

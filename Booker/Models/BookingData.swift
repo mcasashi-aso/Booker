@@ -11,8 +11,8 @@ import SwiftUI
 struct BookingData: Hashable, Identifiable, Comparable {
     var id: Date { createDate }
     
-    var book = Book(name: "", writer: "")
-    var createDate = Date()
+    var book: Book
+    var createDate: Date
     var about = ""
     var opinion = ""
     

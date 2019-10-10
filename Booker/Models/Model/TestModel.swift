@@ -34,14 +34,11 @@ class TestModel: ModelProtocol {
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        if let fromData = try? decoder.decode(iTunesAPIResponse.self, from: testData) {
-            let hoge = fromData.results
-                .map(SearchModel.itunesAPIResponseToBook(from:)).enumerated()
-                .map({ BookingData(book: $1, about: "book\($0)", opinion: "opinion for \($1.name)") })
-            return [cData] + hoge
-        }
+        let fromData = try! decoder.decode(iTunesAPIResponse.self, from: testData)
+        let hoge = fromData.results
+            .map(SearchModel.itunesAPIResponseToBook(from:)).enumerated()
+            .map { BookingData(book: $1, about: "book\($0)", opinion: "opinion for \($1.name)") }
         
-        return [aData, bData, cData]
+        return [aData, bData, cData] + hoge
     }()
-
 }

@@ -10,15 +10,18 @@ import Foundation
 
 struct iTunesAPIResponse: Decodable {
     struct Result: Decodable {
-        let artworkUrl100: String?
-        let trackViewUrl: String?
+        let artworkUrl100: String
+        let trackViewUrl: String
         let releaseDate: Date?
+        let formattedPrice: String
         let trackName: String
-        let description: String?
+        let description: String
         let artistName: String
+        let genres: [String]
         private init() {
-            artworkUrl100 = nil; trackViewUrl = nil; releaseDate = nil;
-            trackName = ""; description = nil; artistName = ""
+            artworkUrl100 = ""; trackViewUrl = ""; releaseDate = nil;
+            formattedPrice = ""; trackName = ""; description = "";
+            artistName = ""; genres = []
         }
     }
     var results: [Result]

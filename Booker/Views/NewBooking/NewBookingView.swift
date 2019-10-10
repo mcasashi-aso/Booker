@@ -17,24 +17,40 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
     var body: some View {
         NavigationView {
             List {
-                TextField("title", text: $searchModel.searchText,
-                          onEditingChanged: { _ in
-                            self.searchModel.search()
-                            self.editingBookTitle = true },
-                          onCommit: { self.endEditing() })
-                
-                Text("\(searchModel.searchText)-\(searchModel.books.count): \(searchModel.books[safe: 0]?.description ?? "")")
-                    .lineLimit(1)
-                
-                if editingBookTitle {
+                Section(header: Text("Book")) {
+                    TextField("title", text: $searchModel.searchText,
+                              onEditingChanged: { _ in
+                                self.searchModel.search()
+                                self.editingBookTitle = true },
+                              onCommit: { self.endEditing() })
+                    
+                    // FIXME: For Check text and books
+                    Text("\(searchModel.searchText)-\(searchModel.books.count): \(searchModel.books[safe: 0]?.description ?? "")")
+                        .lineLimit(1)
+                    
                     HorizontalSelectView(searchModel.books, selection: $data.book) { book in
                         ZStack {
                             SuggestedBookView(book: book)
-                            if book == self.data.book { Image(systemName: "checkmark") }
+                            if book == self.data.book {
+                                Image(systemName: "checkmark")
+                                Color.gray
+                            }
                         }
-                    }.frame(height: 200)
+                    }
+                    .frame(height: self.editingBookTitle ? 200 : 0)
                 }
-            }.navigationBarTitle("New Booking")
+                
+                Section(header: Text("about")) {
+                    TextField("about", text: $data.about)
+                        .lineLimit(0)
+                        .frame(minWidth: 100, maxWidth: UIScreen.main.bounds.width, minHeight: 50, idealHeight: 200, maxHeight: 200, alignment: .topLeading)
+
+                    TextField("opinion", text: $data.opinion)
+                    .frame(height: 200)
+                }
+            }
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("New Booking")
         }
     }
     

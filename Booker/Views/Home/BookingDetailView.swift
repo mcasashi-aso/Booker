@@ -17,11 +17,13 @@ struct BookingDetailView: View {
             VStack {
                 NavigationLink(destination: BookView(book: data.book)) {
                     HStack {
-                        LinkImage(data.book.imageURL) {
-                            Image(systemName: "book")
-                                .font(.largeTitle)
-                        }   .padding()
-                            .frame(width: UIScreen.main.bounds.width / 256 * 81)
+                        GeometryReader { geometry in
+                            LinkImage(self.data.book.imageURL) {
+                                Image(systemName: "book")
+                                    .font(.largeTitle)
+                            }   .padding()
+                                .frame(width: geometry.size.width / 256 * 81)
+                        }
                         
                         VStack(alignment: .leading) {
                             Text(data.book.writer ?? "")

@@ -21,14 +21,17 @@ extension SearchModelProtocol {
         Book(name: res.trackName,
              writer: res.artistName,
              about: res.description,
-             imageURL: res.artworkUrl100.flatMap { string in
-                var url = URL(string: string)
-                url?.deleteLastPathComponent()
-                url?.appendPathComponent("1024x1024bb.jpg")
-                return url
-            },
-             smallImageURL: res.artworkUrl100.flatMap { URL(string: $0) ?? nil },
-             url: res.trackViewUrl.flatMap { URL(string: $0) },
-             releaseDate: res.releaseDate)
+             imageURL: {
+                 var url = URL(string: res.artworkUrl100)!
+                 url.deleteLastPathComponent()
+                 url.appendPathComponent("1024x1024bb.jpg")
+                 return url
+             }(),
+             smallImageURL: URL(string: res.artworkUrl100)!,
+             url: URL(string: res.trackViewUrl)!,
+             releaseDate: res.releaseDate!,
+             price: res.formattedPrice,
+             genres: res.genres)
+        
     }
 }
