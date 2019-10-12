@@ -18,27 +18,25 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
         NavigationView {
             List {
                 Section(header: Text("Book")) {
+                    
                     TextField("title", text: $searchModel.searchText,
                               onEditingChanged: { _ in
                                 self.searchModel.search()
                                 self.editingBookTitle = true },
                               onCommit: { self.endEditing() })
                     
-                    // FIXME: For Check text and books
-                    Text("\(searchModel.searchText)-\(searchModel.books.count): \(searchModel.books[safe: 0]?.description ?? "")")
-                        .lineLimit(1)
-                    
-                    // TODO: 高さ0のCell作れなくね
-                    HorizontalSelectView(searchModel.books, selection: $data.book) { book in
-                        ZStack {
-                            SuggestedBookView(book: book)
-                            if book == self.data.book {
-                                Image(systemName: "checkmark")
-                                Color.gray
+                    if self.editingBookTitle {
+                        HorizontalSelectView(searchModel.books, selection: $data.book) { book in
+                            ZStack {
+                                SuggestedBookView(book: book)
+                                if book == self.data.book {
+                                    Image(systemName: "checkmark")
+                                    Color.gray
+                                }
                             }
                         }
+                        .frame(height: 200)
                     }
-                    .frame(height: self.editingBookTitle ? 200 : 0)
                 }
                 
                 Section(header: Text("about")) {
@@ -46,8 +44,8 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                     TextField("about", text: $data.about)
                         .lineLimit(0)
                         .frame(minWidth: 100, maxWidth: 200, minHeight: 50, idealHeight: 200, maxHeight: 200, alignment: .topLeading)
-
-                   
+                    
+                    
                 }
             }
             .listStyle(GroupedListStyle())

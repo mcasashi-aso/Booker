@@ -19,6 +19,7 @@
 		BA4554182347C41400E0B8D2 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554172347C41400E0B8D2 /* ModelProtocol.swift */; };
 		BA45541A2347C47700E0B8D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4554192347C47700E0B8D2 /* Model.swift */; };
 		BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8334D62345E02A00AEA1EB /* SearchModel.swift */; };
+		BA9379F82350BDEA002E6656 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9379F72350BDEA002E6656 /* TextView.swift */; };
 		BA95A5872349007800839681 /* HorizontalPickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95A5862349007800839681 /* HorizontalPickerStyle.swift */; };
 		BA95A589234AA76700839681 /* HorizontalSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95A588234AA76700839681 /* HorizontalSelectView.swift */; };
 		BAA0286E2342EC7C0087AA52 /* BookingDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */; };
@@ -70,6 +71,7 @@
 		BA4554192347C47700E0B8D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BA8334D52345DFC600AEA1EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BA8334D62345E02A00AEA1EB /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		BA9379F72350BDEA002E6656 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		BA95A5862349007800839681 /* HorizontalPickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPickerStyle.swift; sourceTree = "<group>"; };
 		BA95A588234AA76700839681 /* HorizontalSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSelectView.swift; sourceTree = "<group>"; };
 		BAA0286D2342EC7C0087AA52 /* BookingDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataRow.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			children = (
 				BAC9FAA123454534001D8FC7 /* LinkImage.swift */,
 				BA95A5862349007800839681 /* HorizontalPickerStyle.swift */,
+				BA9379F72350BDEA002E6656 /* TextView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				BA3C619323280A00004C5CE5 /* NewBookingView.swift in Sources */,
 				BABCEDBC2325B6A700B4BBAB /* AppDelegate.swift in Sources */,
 				BABCEDEE2325B82D00B4BBAB /* BookingData.swift in Sources */,
+				BA9379F82350BDEA002E6656 /* TextView.swift in Sources */,
 				BA8334D72345E02A00AEA1EB /* SearchModel.swift in Sources */,
 				BA41622C234B61E6006B5E5C /* BookView.swift in Sources */,
 				BAA028702342ED580087AA52 /* TestModel.swift in Sources */,
