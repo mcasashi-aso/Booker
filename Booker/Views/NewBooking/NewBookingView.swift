@@ -41,11 +41,10 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                 
                 Section(header: Text("about")) {
                     // TODO: 改行できなくね？まじ？
-                    TextField("about", text: $data.about)
-                        .lineLimit(0)
-                        .frame(minWidth: 100, maxWidth: 200, minHeight: 50, idealHeight: 200, maxHeight: 200, alignment: .topLeading)
                     
+//                    MySwiftUITextView($data.about, isEditable: true, placeholder: "about")
                     
+                    Text("about")
                 }
             }
             .listStyle(GroupedListStyle())
