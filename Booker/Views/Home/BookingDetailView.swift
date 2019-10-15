@@ -12,7 +12,7 @@ struct BookingDetailView: View {
     
     var data: BookingData
     
-    @State var editing: Bool
+    @State var editing = false
     
     var body: some View {
         ScrollView {
@@ -27,9 +27,14 @@ struct BookingDetailView: View {
                             .padding()
                             .frame(width: geometry.size.width / 3)
                             
-                            VStack(alignment: .leading) {
-                                Text(self.data.book.writer ?? "")
-                                Text(self.data.book.releaseDate?.dayString ?? "")
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    if self.data.book.writer != nil {
+                                        Text(self.data.book.writer!) }
+                                    if self.data.book.releaseDate != nil {
+                                        Text(self.data.book.releaseDate!.dayString) }
+                                }
+                                Spacer()
                             }
                             .frame(width: geometry.size.width / 2)
                         }
@@ -39,15 +44,30 @@ struct BookingDetailView: View {
                 .foregroundColor(.primary)
                 
                 Divider()
-                Text(data.about).padding()
-                Text(data.opinion).padding()
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("About").font(.title)
+                            .padding(.leading)
+                        Text(data.about)
+                            .padding(.leading)
+                        Text("Opinion").font(.title)
+                            .padding([.leading, .top])
+                        Text(data.opinion)
+                            .padding(.leading)
+                        Text("ReadingDate").font(.title)
+                            .padding([.leading, .top])
+                        Text(data.createDate.dayString)
+                            .padding(.leading)
+                    }
+                    Spacer()
+                }
             }
         }
         .navigationBarItems(trailing: Button(action: {
-            
+            self.editing.toggle()
         }) { Text("Edit") })
             .sheet(isPresented: $editing) {
-                <#code#>
+                NewBookingView(data: self.data, searchModel: SearchModel())
         }
     }
 }

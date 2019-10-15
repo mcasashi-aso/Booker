@@ -31,15 +31,28 @@ struct BookView: View {
                 .frame(width: geometry.size.width - 90, height: 50)
                 .background(
                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .fill(Color.gray)
+                        .fill(Color(.systemGray))
                 )
                 
-                Text(self.book.writer ?? "")
-                
-                Text(self.book.releaseDate?.dayString ?? "")
-                
-                if self.book.about != nil {
-                    Text(self.book.about!).padding()
+                VStack(alignment: .leading) {
+                    if self.book.writer != nil {
+                        Text("Author").font(.title)
+                            .padding([.leading, .top])
+                        Text(self.book.writer!)
+                            .padding([.leading, .trailing])
+                    }
+                    if self.book.about != nil {
+                        Text("Description").font(.title)
+                            .padding([.leading, .top])
+                        Text(self.book.about!)
+                            .padding([.leading, .trailing])
+                    }
+                    if self.book.releaseDate != nil {
+                        Text("Release Date").font(.title)
+                            .padding([.leading, .top])
+                        Text(self.book.releaseDate!.dayString)
+                            .padding([.leading, .trailing])
+                    }
                 }
             }
         }
@@ -49,6 +62,6 @@ struct BookView: View {
 
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
-        BookView(book: TestModel().bookingDatas[1].book)
+        BookView(book: TestModel().bookingDatas[3].book)
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 
 struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var editingBookTitle = false
     @State var data = BookingData(book: Book(name: "", writer: ""), about: "", opinion: "")
     @ObservedObject var searchModel: ObsearvableModel
@@ -17,7 +19,7 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Book")) {
+                Section(header: Text("Book".uppercased())) {
                     
                     TextField("title", text: $searchModel.searchText,
                               onEditingChanged: { _ in self.editingBookTitle = true },
@@ -29,26 +31,39 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                                 SuggestedBookView(book: book)
                                     .frame(width: 150)
                                 if book == self.data.book {
+                                    Color.gray.opacity(0.6)
                                     Image(systemName: "checkmark")
                                         .imageScale(.large)
-                                    Color.gray.opacity(0.3)
+                                        .foregroundColor(.white)
                                 }
                             }
                         }
                         .frame(height: 200)
+                        .edgesIgnoringSafeArea([.leading, .trailing])
                     }
                 }
                 
-                Section(header: Text("about")) {
-                    // TODO: 改行できなくね？まじ？
-                    
-                    TextView($data.about, isEditable: true)
-                    
-                    Text("about")
+                Section(header: Text("about".uppercased())) {
+                    TextView($data.about, isEditable: true, placeholder: "about this book")
+                }
+                Section(header: Text("opinion".uppercased())) {
+                    TextView($data.about, isEditable: true, placeholder: "opinion this book")
                 }
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("New Booking")
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Cancel")
+                }, trailing:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Done")
+                }
+            )
         }
     }
     
@@ -60,6 +75,6 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
 
 struct NewBookingView_Previews: PreviewProvider {
     static var previews: some View {
-        NewBookingView(searchModel: SearchModel())
+        NewBookingView(editingBookTitle: true, searchModel: TestSearchModel())
     }
 }

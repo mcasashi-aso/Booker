@@ -32,7 +32,7 @@ struct HorizontalSelectView<Value, Cell>: View where Value: Identifiable, Cell: 
     }
     
     init(_ datas: [Value], selection: Binding<Value>,
-         cell: @escaping (Value) -> Cell) {
+         @ViewBuilder cell: @escaping (Value) -> Cell) {
         self.datas = datas
         self._selection = selection
         self.cell = cell
@@ -46,19 +46,32 @@ fileprivate struct HorizontalSelectView_For_Previews: View {
     }
     @State var selecting: Season = .spring
     var body: some View {
-        HorizontalSelectView(Season.allCases, selection: $selecting) { season in
-            ZStack() {
-                Text(season.rawValue)
-                    .font(.largeTitle)
-                    .animation(.spring())
-                    .foregroundColor(season == self.selecting ? .red : .black)
-                if self.selecting == season {
-                    Color(.displayP3, red: 0, green: 0, blue: 0, opacity: 0.5)
-                    Image(systemName: "checkmark")
+        VStack {
+            HorizontalSelectView(Season.allCases, selection: $selecting) { season in
+                ZStack() {
+                    Text(season.rawValue)
                         .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .animation(.spring())
+                        .foregroundColor(season == self.selecting ? .red : .black)
+                    if self.selecting == season {
+                        Color(.displayP3, red: 0, green: 0, blue: 0, opacity: 0.5)
+                        Image(systemName: "checkmark")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                    }
+                }.frame(width: 150, height: 200)
+            }
+            
+            Picker(selection: $selecting, label: Text("picker")) {
+                ForEach(Season.allCases) { season in
+                    if season == self.selecting {
+                        Text(season.rawValue.uppercased())
+                            .foregroundColor(.primary).tag(season)
+                    }else {
+                        Text(season.rawValue).tag(season)
+                    }
                 }
-            }.frame(width: 150, height: 200)
+            }
         }
     }
 }

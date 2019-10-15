@@ -14,8 +14,9 @@ struct SuggestedBookView: View {
         VStack {
             LinkImage(book.smallImageURL) {
                 Image(systemName: "book").font(.largeTitle)
-            }.background(Color.gray)
-                .frame(width: 100, height: 150)
+            }
+            .frame(width: 100, height: 150)
+            .background(Color.gray)
             
             Text(book.name)
         }

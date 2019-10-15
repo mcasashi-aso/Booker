@@ -23,20 +23,17 @@ final class SearchModel: SearchModelProtocol {
     }
     
     func search() {
-        print(#function)
         guard let cordedText = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let countryCode = Locale.current.regionCode?.lowercased(),
             let languageCode = Locale.current.languageCode,
             let url = URL(string: "https://itunes.apple.com/search?term=\(cordedText)&media=ebook&entity=ebook&country=\(countryCode)&limit=15&lang=\(languageCode)") else { return }
-        print("generated: \(url)")
+        
         URLSession.shared.dataTask(with: url) { (result, _, error) in
-            print(result ?? error ?? "")
             guard let result = result, error == nil else {
                 print("API(iTunesAPI) ERROR: \(error!)"); return
             }
             do {
                 let decoded = try self.decoder.decode(iTunesAPIResponse.self, from: result)
-                print(decoded.results.count)
                 DispatchQueue.main.async {
                     self.books = decoded.results.map(Self.itunesAPIResponseToBook(from:))
                 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 final class _TextView: UITextView, UITextViewDelegate {
-    private lazy var placeholderLabel = UILabel(frame: CGRect(x: 6, y: 6, width: 0, height: 0))
+    lazy var placeholderLabel = UILabel(frame: CGRect(x: 6, y: 6, width: 0, height: 0))
     var placeholder: String? = nil {
         didSet {
             placeholderLabel.text = placeholder
@@ -22,6 +22,7 @@ final class _TextView: UITextView, UITextViewDelegate {
         delegate = self
         configure()
         apply()
+        self.backgroundColor = nil
     }
     
     private func configure() {
@@ -43,6 +44,9 @@ struct TextView: UIViewRepresentable {
     var isEditable: Bool
     var placeholder: String?
     
+    var font: UIFont = .preferredFont(forTextStyle: .body)
+    var textColor: UIColor = .label
+    
     func makeUIView(context: Context) -> _TextView {
         _TextView()
     }
@@ -51,6 +55,9 @@ struct TextView: UIViewRepresentable {
         textView.text = text
         textView.isEditable = isEditable
         textView.placeholder = placeholder
+        textView.font = font
+        textView.textColor = textColor
+        textView.placeholderLabel.font = font
     }
     
     init(_ text: Binding<String>, isEditable: Bool, placeholder: String? = nil) {
@@ -58,16 +65,39 @@ struct TextView: UIViewRepresentable {
         self.isEditable = isEditable
         self.placeholder = placeholder
     }
+    
+    private init(_ text: Binding<String>, isEditable: Bool, placeholder: String? = nil,
+                 font: UIFont = .preferredFont(forTextStyle: .body),
+                 textColor: UIColor = .label) {
+        self = Self(text, isEditable: isEditable, placeholder: placeholder)
+        self.font = font
+        self.textColor = textColor
+    }
+    
+    func font(_ uiFont: UIFont) -> Self {
+        Self(_text, isEditable: isEditable, placeholder: placeholder,
+             font: uiFont, textColor: textColor)
+    }
+    
+    func foregroundColor(_ uiColor: UIColor) -> Self {
+        Self(_text, isEditable: isEditable, placeholder: placeholder,
+             font: font, textColor: uiColor)
+    }
 }
 
 struct TextView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-        TextView(.constant("longlongtext\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nlonglonglong\n\n\n\n\n\n\n\n\n\naaaaaaaaaaa"), isEditable: false)
-                
+        TextView(.constant("longlongtext\naaaaaa\nlonglonglong\na\na\na\na\na\na\na\na\n\naaaaaaaaaaa"), isEditable: false)
+            .foregroundColor(.blue)
+            .font(.preferredFont(forTextStyle: .largeTitle))
             
             TextView(.constant(""), isEditable: true, placeholder: "placeholder")
-                .background(Color.red)
+            
+            TextView(.constant("世界で一つだけの花"), isEditable: true, placeholder: "曲名を入力してください")
+                .font(.preferredFont(forTextStyle: .title1))
+                .foregroundColor(.label)
+                .background(Color.secondary)
         }
     }
 }
