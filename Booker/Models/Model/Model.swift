@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class Model: ModelProtocol {
+final class Model: ModelProtocol {
     
     private let userDefaults = UserDefaults.standard
     

@@ -16,8 +16,8 @@ struct HorizontalSelectView<Value, Cell>: View where Value: Identifiable, Cell: 
     
     var body: some View {
         if !datas.isEmpty { return AnyView(
-            ScrollView(.horizontal) {
-                HStack {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 15) {
                     ForEach(datas) { data in
                         self.cell(data)
                             .gesture(TapGesture(count: 1).onEnded {

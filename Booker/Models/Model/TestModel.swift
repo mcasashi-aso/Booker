@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class TestModel: ModelProtocol {
+final class TestModel: ModelProtocol {
     
     init() {}
     
@@ -37,7 +37,10 @@ class TestModel: ModelProtocol {
         let fromData = try! decoder.decode(iTunesAPIResponse.self, from: testData)
         let hoge = fromData.results
             .map(SearchModel.itunesAPIResponseToBook(from:)).enumerated()
-            .map { BookingData(book: $1, about: "book\($0)", opinion: "opinion for \($1.name)") }
+            .map { BookingData(book: $1,
+                               about: "読んでない本の詳細などと言われても困る。渡辺恵太さんが書いてることしか知らない",
+                opinion: "読んでない本の感想などと言われても困る。多分いい本だろう。消極的な人よ、立ち上がれ。いや、立ち上がらなくて良い")
+        }
         
         return [aData, bData, cData] + hoge
     }()

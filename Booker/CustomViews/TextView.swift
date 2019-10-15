@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class _TextView: UITextView, UITextViewDelegate {
+final class _TextView: UITextView, UITextViewDelegate {
     private lazy var placeholderLabel = UILabel(frame: CGRect(x: 6, y: 6, width: 0, height: 0))
     var placeholder: String? = nil {
         didSet {
@@ -43,9 +43,6 @@ struct TextView: UIViewRepresentable {
     var isEditable: Bool
     var placeholder: String?
     
-    var font: UIFont = .preferredFont(forTextStyle: .body)
-    var textColor: UIColor = .label
-    
     func makeUIView(context: Context) -> _TextView {
         _TextView()
     }
@@ -54,8 +51,6 @@ struct TextView: UIViewRepresentable {
         textView.text = text
         textView.isEditable = isEditable
         textView.placeholder = placeholder
-        textView.font = font
-        textView.textColor = textColor
     }
     
     init(_ text: Binding<String>, isEditable: Bool, placeholder: String? = nil) {
@@ -63,25 +58,13 @@ struct TextView: UIViewRepresentable {
         self.isEditable = isEditable
         self.placeholder = placeholder
     }
-    
-    @inlinable mutating func font(_ uiFont: UIFont) -> Self {
-        self.font = uiFont
-        return self
-    }
-    
-    mutating func foregroundColor(_ uiColor: UIColor) -> Self {
-        self.textColor = uiColor
-        return self
-    }
-    
-    
 }
 
 struct TextView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
         TextView(.constant("longlongtext\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nlonglonglong\n\n\n\n\n\n\n\n\n\naaaaaaaaaaa"), isEditable: false)
-                .font(UIFont.preferredFont(forTextStyle: .largeTitle))
+                
             
             TextView(.constant(""), isEditable: true, placeholder: "placeholder")
                 .background(Color.red)

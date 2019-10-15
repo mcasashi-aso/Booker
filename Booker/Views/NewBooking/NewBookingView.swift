@@ -20,18 +20,18 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                 Section(header: Text("Book")) {
                     
                     TextField("title", text: $searchModel.searchText,
-                              onEditingChanged: { _ in
-                                self.searchModel.search()
-                                self.editingBookTitle = true },
+                              onEditingChanged: { _ in self.editingBookTitle = true },
                               onCommit: { self.endEditing() })
                     
                     if self.editingBookTitle {
                         HorizontalSelectView(searchModel.books, selection: $data.book) { book in
                             ZStack {
                                 SuggestedBookView(book: book)
+                                    .frame(width: 150)
                                 if book == self.data.book {
                                     Image(systemName: "checkmark")
-                                    Color.gray
+                                        .imageScale(.large)
+                                    Color.gray.opacity(0.3)
                                 }
                             }
                         }
@@ -42,7 +42,7 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                 Section(header: Text("about")) {
                     // TODO: 改行できなくね？まじ？
                     
-//                    MySwiftUITextView($data.about, isEditable: true, placeholder: "about")
+                    TextView($data.about, isEditable: true)
                     
                     Text("about")
                 }

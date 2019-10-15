@@ -12,7 +12,7 @@ struct SuggestedBookView: View {
     let book: Book
     var body: some View {
         VStack {
-            LinkImage(book.imageURL) {
+            LinkImage(book.smallImageURL) {
                 Image(systemName: "book").font(.largeTitle)
             }.background(Color.gray)
                 .frame(width: 100, height: 150)
