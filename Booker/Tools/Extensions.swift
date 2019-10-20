@@ -63,4 +63,7 @@ extension Array {
     }
 }
 
-// MARK: - 
+// MARK: - CGSize
+extension CGSize {
+    static let silver = CGSize(width: 1, height: sqrt(2))
+}

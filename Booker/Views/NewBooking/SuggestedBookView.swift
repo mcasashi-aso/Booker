@@ -16,7 +16,7 @@ struct SuggestedBookView: View {
                 Image(systemName: "book").font(.largeTitle)
             }
             .frame(width: 100, height: 150)
-            .background(Color.gray)
+            .background(Color(.systemGray3))
             
             Text(book.name)
         }

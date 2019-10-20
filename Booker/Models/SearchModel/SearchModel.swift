@@ -29,16 +29,17 @@ final class SearchModel: SearchModelProtocol {
             let url = URL(string: "https://itunes.apple.com/search?term=\(cordedText)&media=ebook&entity=ebook&country=\(countryCode)&limit=15&lang=\(languageCode)") else { return }
         
         URLSession.shared.dataTask(with: url) { (result, _, error) in
-            guard let result = result, error == nil else {
-                print("API(iTunesAPI) ERROR: \(error!)"); return
-            }
-            do {
-                let decoded = try self.decoder.decode(iTunesAPIResponse.self, from: result)
-                DispatchQueue.main.async {
-                    self.books = decoded.results.map(Self.itunesAPIResponseToBook(from:))
+            if let error = error {
+                print("API(iTunesAPI) ERROR: \(error)"); return
+            }else if let result = result {
+                do {
+                    let decoded = try self.decoder.decode(iTunesAPIResponse.self, from: result)
+                    DispatchQueue.main.async {
+                        self.books = decoded.results.map(Self.itunesAPIResponseToBook(from:))
+                    }
+                }catch let error {
+                    print("decode error: \(error)")
                 }
-            }catch let error {
-                print("decode error: \(error)")
             }
         }.resume()
     }

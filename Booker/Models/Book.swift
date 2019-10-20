@@ -9,7 +9,7 @@
 import Foundation
 
 struct Book: Hashable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     
     let name: String
     let writer: String?

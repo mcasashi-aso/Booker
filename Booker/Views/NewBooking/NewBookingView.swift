@@ -13,6 +13,7 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var editingBookTitle = false
+    @State var title = ""
     @State var data = BookingData(book: Book(name: "", writer: ""), about: "", opinion: "")
     @ObservedObject var searchModel: ObsearvableModel
     
@@ -22,7 +23,7 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                 Section(header: Text("Book".uppercased())) {
                     
                     TextField("title", text: $searchModel.searchText,
-                              onEditingChanged: { _ in self.editingBookTitle = true },
+                              onEditingChanged: {_ in self.editingBookTitle = true },
                               onCommit: { self.endEditing() })
                     
                     if self.editingBookTitle {
@@ -31,9 +32,10 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
                                 SuggestedBookView(book: book)
                                     .frame(width: 150)
                                 if book == self.data.book {
-                                    Color.gray.opacity(0.6)
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(Color.gray.opacity(0.6))
                                     Image(systemName: "checkmark")
-                                        .imageScale(.large)
+                                        .font(.system(size: 50))
                                         .foregroundColor(.white)
                                 }
                             }
@@ -52,17 +54,19 @@ struct NewBookingView<ObsearvableModel: SearchModelProtocol>: View {
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("New Booking")
-            .navigationBarItems(leading:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Cancel")
-                }, trailing:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Done")
-                }
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Cancel")
+                    },
+                trailing:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Done")
+                    }
             )
         }
     }
