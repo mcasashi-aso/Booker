@@ -16,50 +16,31 @@ struct BookingDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
-                NavigationLink(destination: BookView(book: data.book)) {
-                    GeometryReader { geometry in
-                        HStack(spacing: 0) {
-                            LinkImage(self.data.book.imageURL) {
-                                Image(systemName: "book")
-                                    .font(.largeTitle)
-                            }
-                            .padding()
-                            .frame(width: geometry.size.width / 3)
-                            
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    if self.data.book.writer != nil {
-                                        Text(self.data.book.writer!) }
-                                    if self.data.book.releaseDate != nil {
-                                        Text(self.data.book.releaseDate!.dayString) }
-                                }
-                                Spacer()
-                            }
-                            .frame(width: geometry.size.width / 2)
-                        }
+            NavigationLink(destination: BookView(book: data.book)) {
+                HStack(alignment: .center, spacing: 0) {
+                    LinkImage(self.data.book.imageURL) {
+                        Image(systemName: "book")
+                            .font(.largeTitle)
+                    }
+                    .padding()
+                    
+                    VStack(alignment: .leading) {
+                        self.data.book.writer.map(Text.init)
+                        (self.data.book.releaseDate?.dayString).map(Text.init)
                     }
                 }
-                .frame(height: UIScreen.main.bounds.width / 16 * 9)
-                .foregroundColor(.primary)
-                
-                Divider()
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("About").font(.title)
-                            .padding(.leading)
-                        Text(data.about)
-                            .padding(.leading)
-                        Text("Opinion").font(.title)
-                            .padding([.leading, .top])
-                        Text(data.opinion)
-                            .padding(.leading)
-                        Text("ReadingDate").font(.title)
-                            .padding([.leading, .top])
-                        Text(data.createDate.dayString)
-                            .padding(.leading)
-                    }
-                    Spacer()
+            }
+            .frame(height: UIScreen.main.bounds.width / 16 * 9)
+            .foregroundColor(.primary)
+            
+            Divider()
+            
+            ForEach([("About", data.about), ("Opinion", data.opinion), ("Reading Date", data.createDate.dayString)], id: \.0) { (head, data) in
+                VStack(alignment: .leading) {
+                    Text(head).font(.title)
+                        .padding(.leading)
+                    Text(data)
+                        .padding(.leading)
                 }
             }
         }

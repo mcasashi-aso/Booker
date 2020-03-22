@@ -15,8 +15,9 @@ struct BookingDataRow: View {
         HStack(alignment: .center) {
             LinkImage(data.book.imageURL) {
                 Image(systemName: "book").font(.title)
-            }   .padding(5)
-                .frame(width: 60, height: 60)
+            }
+            .padding(5)
+            .frame(width: 60, height: 60)
             
             VStack(alignment: .leading) {
                 Text(data.book.name)
